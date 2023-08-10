@@ -18,8 +18,9 @@ fetch(url)
 .then(res => res.json())
 .then(data => {
 let dollar = data["rates"]["INR"]
-let n = parseInt(amt.value);
-let r = n*dollar;
+let amt_in_dollars = parseFloat(amt.value);
+let amt_in_rupees = amt_in_dollars * dollar;
+ans.innerHTML = "\u20B9" + amt_in_rupees.toFixed(2);
 
 ans.innerHTML = r;
 })
